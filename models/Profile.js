@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create schema
 const ProfileSchema = new Schema({
+  userId: {
+    type: String,
+    required: true
+  },
   experience: {
     type: String,
     required: true
@@ -10,6 +14,9 @@ const ProfileSchema = new Schema({
   education: {
     type: String,
     required: true
+  },
+  superpower: {
+    type: String
   },
   gender: {
     type: String,
@@ -19,6 +26,9 @@ const ProfileSchema = new Schema({
     type: String
   },
   state: {
+    type: String
+  },
+  country: {
     type: String
   }
 })
