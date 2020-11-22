@@ -1,35 +1,111 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create schema
 const ProfileSchema = new Schema({
-  userId: {
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  handle: {
+    type: String,
+    required: true,
+    max: 40
+  },
+  company: {
+    type: String
+  },
+  website: {
+    type: String
+  },
+  location: {
+    type: String
+  },
+  status: {
     type: String,
     required: true
   },
-  experience: {
-    type: String,
+  skills: {
+    type: [String],
     required: true
   },
-  education: {
-    type: String,
-    required: true
-  },
-  superpower: {
+  bio: {
     type: String
   },
-  gender: {
-    type: String,
-    required: true
-  },
-  city: {
+  githubusername: {
     type: String
   },
-  state: {
-    type: String
-  },
-  country: {
-    type: String
+  experience: [{
+    title: {
+      type: String,
+      required: true
+    },
+    company: {
+      type: String,
+      required: true
+    },
+    location: {
+      type: String
+    },
+    from: {
+      type: Date,
+      required: true
+    },
+    to: {
+      type: Date
+    },
+    current: {
+      type: Boolean,
+      default: false
+    },
+    description: {
+      type: String
+    }
+  }],
+  education: [
+    {
+      school: {
+        type: String,
+        required: true
+      },
+      degree: {
+        type: String,
+        required: true
+      },
+      fieldofstudy: {
+        type: String,
+        required: true
+      },
+      from: {
+        type: Date,
+        default: Date.now,
+        required: true
+      },
+      to: {
+        type: Date,
+        default: Date.now
+      },
+      current: {
+        type: Boolean,
+        default: false
+      }
+    }
+  ],
+  social: {
+    youtube: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    linkedin: {
+      type: String
+    },
+    instagram: {
+      type: String
+    }
   }
 })
 
