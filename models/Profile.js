@@ -106,7 +106,15 @@ const ProfileSchema = new Schema({
     instagram: {
       type: String
     }
-  }
+  },
+  followers: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      }
+    }
+  ],
 })
 
 module.exports = Profile = mongoose.model('profiles', ProfileSchema)

@@ -1,3 +1,16 @@
-/config/keys.js
 /node_modules
+/client/node_modules
+/client/package-lock.json
 package-lock.json
+/client/package-lock.json
+/client/yarn.lock
+/client/.eslintcache
+
+/config/keys.js
+
+/staging
+
+# production
+/build
+
+.DS_Store
