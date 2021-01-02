@@ -88,8 +88,9 @@ router.post('/login', (req, res) => {
                 keys.secretOrKey,
                 // 300 secs = 5 min
                 // 3600 secs = 1 hour
+                // 21600 secs = 6 hours
                 // 43200 secs = 12 hours
-                { expiresIn: 120 },
+                { expiresIn: 21600 },
                 (err, token) => {
                   return res.json({ token: 'Bearer ' + token })
                 })
