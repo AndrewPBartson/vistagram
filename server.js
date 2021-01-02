@@ -34,9 +34,11 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+let testMsg = process.env.NODE_ENV;
+
 app.get(
   '/',
-  (req, res) => res.send('Cloudy day in SE Alaska')
+  (req, res) => res.send('process.env.NODE_ENV :>> ', testMsg)
 );
 
 app.use('/api/users', users);
