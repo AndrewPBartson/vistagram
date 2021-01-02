@@ -34,6 +34,11 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+app.get(
+  '/',
+  (req, res) => res.send('Cloudy day in SE Alaska')
+);
+
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
@@ -43,12 +48,13 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   });
-} else {
-  app.get(
-    '/',
-    (req, res) => res.send('Running in development mode')
-  );
 }
+// else {
+//   app.get(
+//     '/',
+//     (req, res) => res.send('Running in development mode')
+//   );
+// }
 
 app.listen(
   port,
