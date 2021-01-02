@@ -1,14 +1,9 @@
-# DevConnector
+# Vista-gram
 
 ## Status of Project
 
-Nov 21, 2020
+January 2, 2021
 
-- MongoDb is working.
-- Login and registration are working on backend.
-- Most backend functionality is working.
-- For development, all dates are set to Date.now()
-
-## Features to Add
-
-- Build frontend, piece-a-cake
+- Server code and backend APIs are complete
+- UI needs many bug-fixes and improvements
+- Ready to deploy to Heroku
