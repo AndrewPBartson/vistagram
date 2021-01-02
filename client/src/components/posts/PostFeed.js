@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PostItem from './PostItem';
+import isEmpty from '../../validation/is-empty';
 
 class PostFeed extends Component {
+  componentDidMount() {
+  }
+
   render() {
     const { posts } = this.props;
 
-    return posts.map(post => <PostItem key={post._id} post={post} />);
+    if (isEmpty(posts)) {
+      return <div></div>
+    } else {
+      return posts.map(post => <PostItem key={post._id} post={post} />)
+    }
   }
 }
 

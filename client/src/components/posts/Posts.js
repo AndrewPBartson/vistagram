@@ -23,11 +23,14 @@ class Posts extends Component {
 
     return (
       <div className="feed">
-        <div className="container">
+        <div>
           <div className="row">
             <div className="col-md-12">
+              <h1 className="cursive headline text-center mb-3">Celebrating Beings of Light !</h1>
               <PostForm />
-              {postContent}
+              <div className="row">
+                {postContent}
+              </div>
             </div>
           </div>
         </div>

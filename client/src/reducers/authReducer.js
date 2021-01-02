@@ -20,7 +20,6 @@ const initialState = {
 // some logic that is applied to the store. 
 // It has a default action to rewrite the current state.
 
-// export default function (state = initialState, action) {
 export default function (state = initialState, action) {
 
   switch (action.type) {

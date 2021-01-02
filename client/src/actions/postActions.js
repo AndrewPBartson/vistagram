@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {
   ADD_POST,
-  GET_ERRORS,
+  SET_ERROR,
   CLEAR_ERRORS,
   GET_POSTS,
   GET_POST,
@@ -21,11 +21,12 @@ export const addPost = postData => dispatch => {
         payload: res.data
       })
     )
-    .catch(err =>
+    .catch(err => {
       dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
+        type: SET_ERROR,
+        payload: err
       })
+    }
     );
 };
 
@@ -79,7 +80,7 @@ export const deletePost = id => dispatch => {
     )
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -92,7 +93,7 @@ export const addLike = id => dispatch => {
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -105,7 +106,7 @@ export const removeLike = id => dispatch => {
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -124,7 +125,7 @@ export const addComment = (postId, commentData) => dispatch => {
     )
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -142,7 +143,7 @@ export const deleteComment = (postId, commentId) => dispatch => {
     )
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );

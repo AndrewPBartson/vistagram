@@ -1,7 +1,9 @@
 {
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // For more information: 
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  
   "version": "0.2.0",
   "configurations": [
     // Kal used this config -
@@ -23,8 +25,8 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:7777",
+      "name": "Frontend - localhost, Chrome",
+      "url": "http://localhost:7285",
       "webRoot": "${workspaceFolder}/client"
     }
   ]

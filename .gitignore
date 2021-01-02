@@ -1,12 +1,11 @@
 /node_modules
-/client/node_modules
-/client/package-lock.json
 package-lock.json
+/client/node_modules
 /client/package-lock.json
 /client/yarn.lock
 /client/.eslintcache
 
-/config/keys.js
+/config/keys_dev.js
 
 /staging
 

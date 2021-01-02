@@ -1,7 +1,7 @@
 {
-  "name": "devconnector",
+  "name": "vistagram",
   "version": "1.0.0",
-  "description": "LinkedIn for developers",
+  "description": "A place to post pictures of your favorite beings of light",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudobserver/devconnector.git"
+    "url": "git+https://github.com/cloudobserver/vistagram.git"
   },
   "author": "Andrew Bartson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cloudobserver/devconnector/issues"
+    "url": "https://github.com/cloudobserver/vistagram/issues"
   },
-  "homepage": "https://github.com/cloudobserver/devconnector#readme",
+  "homepage": "https://github.com/cloudobserver/vistagram#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -28,6 +28,7 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.11",
+    "multer": "^1.4.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.1.17"

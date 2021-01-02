@@ -121,7 +121,7 @@ class CreateProfile extends Component {
       );
     }
 
-    // Select options for status
+    // select options for status
     const options = [
       { label: '* Select Professional Status', value: 0 },
       { label: 'Developer', value: 'Developer' },
@@ -139,10 +139,7 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create Your Profile</h1>
-              <p className="lead text-center">
-                Let's get some information to make your profile stand out
-              </p>
+              <h1 className="display-4 text-center cursive mt-3 headline">Create Your Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -168,7 +165,7 @@ class CreateProfile extends Component {
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Could be your own company or one you work for"
+                  info="Could be anything, such as where you work or volunteer"
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -176,7 +173,7 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
+                  info="Could be a website for yourself or an organization"
                 />
                 <TextFieldGroup
                   placeholder="Location"
@@ -187,13 +184,13 @@ class CreateProfile extends Component {
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
-                  placeholder="* Skills"
+                  placeholder="* Interests"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    peace,defense,compassion,conservative"
                 />
                 <TextFieldGroup
                   placeholder="Github Username"
@@ -201,7 +198,7 @@ class CreateProfile extends Component {
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
+                  info="To link to your Github, include your username"
                 />
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
@@ -229,7 +226,7 @@ class CreateProfile extends Component {
                 {socialInputs}
                 <input
                   type="submit"
-                  value="Submit"
+                  value="Create Profile"
                   className="btn btn-info btn-block mt-4"
                 />
               </form>

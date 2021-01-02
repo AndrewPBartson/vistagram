@@ -5,7 +5,7 @@ import {
   GET_PROFILES,
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
-  GET_ERRORS,
+  SET_ERROR,
   SET_CURRENT_USER
 } from './types';
 
@@ -22,12 +22,15 @@ export const getCurrentProfile = () => dispatch => {
         payload: res.data
       })
     )
-    .catch(err =>
+    .catch(err => {
+      console.log('err :>> ', err);
+      console.log('err.response :>> ', err.response);
+      //console.log('err.response.data :>> ', err.response.data);
       dispatch({
         type: GET_PROFILE,
-        payload: {}
+        payload: err.response.data
       })
-    );
+    });
 };
 
 // Get profile by handle
@@ -44,19 +47,19 @@ export const getProfileByHandle = handle => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_PROFILE,
-        payload: null
+        payload: err.response.data
       })
     );
 };
 
-// Create Profile
+// Create or edit profile
 export const createProfile = (profileData, history) => dispatch => {
   axios
     .post('/api/profile', profileData)
     .then(res => history.push('/dashboard'))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -69,7 +72,7 @@ export const addExperience = (expData, history) => dispatch => {
     .then(res => history.push('/dashboard'))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -82,7 +85,7 @@ export const addEducation = (eduData, history) => dispatch => {
     .then(res => history.push('/dashboard'))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -100,7 +103,7 @@ export const deleteExperience = id => dispatch => {
     )
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -118,7 +121,7 @@ export const deleteEducation = id => dispatch => {
     )
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: SET_ERROR,
         payload: err.response.data
       })
     );
@@ -138,7 +141,7 @@ export const getProfiles = () => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_PROFILES,
-        payload: null
+        payload: err.response.data
       })
     );
 };
@@ -148,7 +151,7 @@ export const deleteAccount = () => dispatch => {
   if (window.confirm('Are you sure? This can NOT be undone!')) {
     axios
       .delete('/api/profile')
-      .then(res =>
+      .then(res => // deletes user and token
         dispatch({
           type: SET_CURRENT_USER,
           payload: {}
@@ -156,7 +159,7 @@ export const deleteAccount = () => dispatch => {
       )
       .catch(err =>
         dispatch({
-          type: GET_ERRORS,
+          type: SET_ERROR,
           payload: err.response.data
         })
       );
