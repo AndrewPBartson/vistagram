@@ -18,8 +18,7 @@ app.use(express.json());
 
 app.use(passport.initialize());
 
-// weird syntax - simply executes function in passport.js:
-// (not saving in var because don't need it again)
+// executes main function in passport.js,
 // just tells passport where things are
 require('./config/passport')(passport);
 
@@ -33,13 +32,6 @@ mongoose
   })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
-
-// let testMsg = process.env;
-
-// app.get(
-//   '/',
-//   (req, res) => res.send('process.env.NODE_ENV :>> ', testMsg)
-// );
 
 app.use('/api/users', users);
 app.use('/api/profile', profile);
