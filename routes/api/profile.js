@@ -56,7 +56,6 @@ router.get("/all", (req, res) => {
 // not api/profile/handle/?handle=shakyjake
 router.get("/handle/:handle", (req, res) => {
   const errors = {};
-  console.log('hi');
 
   Profile.findOne({ handle: req.params.handle }) // check params, not body
     .populate("user", ["name", "avatar"])

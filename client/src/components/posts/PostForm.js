@@ -42,7 +42,6 @@ class PostForm extends Component {
   onChange = (e) => {
     if (e.target.name === 'text') {
       this.setState({ [e.target.name]: e.target.value });
-      console.log('e.target ', e.target);
     };
     if (e.target.name === 'image') {
       this.setState({ [e.target.name]: e.target.files[0] });

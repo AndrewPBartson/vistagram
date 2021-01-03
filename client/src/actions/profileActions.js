@@ -23,9 +23,6 @@ export const getCurrentProfile = () => dispatch => {
       })
     )
     .catch(err => {
-      console.log('err :>> ', err);
-      console.log('err.response :>> ', err.response);
-      //console.log('err.response.data :>> ', err.response.data);
       dispatch({
         type: GET_PROFILE,
         payload: err.response.data

@@ -27,7 +27,6 @@ class Dashboard extends Component {
     } else {
       // if current user has profile -
       if (profile && !profile.noprofile) {
-        console.log('inside second IF');
         dashboardContent = (
           <div>
             <p className="lead text-muted">
@@ -50,8 +49,6 @@ class Dashboard extends Component {
         );
       } else {
         // current user has no profile -
-        console.log('inside second ELSE');
-
         dashboardContent = (
           <div>
             <h3 className="lead text-muted">Welcome {user.name}! Tell us about yourself!</h3>
