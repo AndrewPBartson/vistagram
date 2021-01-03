@@ -46,7 +46,7 @@ class EditProfile extends Component {
     if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile;
 
-      // If profile field doesn't exist, assign empty string
+      // if profile field doesn't exist, assign empty string
       profile.skills = !isEmpty(profile.skills) ? profile.skills : '';
       profile.company = !isEmpty(profile.company) ? profile.company : '';
       profile.website = !isEmpty(profile.website) ? profile.website : '';
@@ -72,7 +72,7 @@ class EditProfile extends Component {
         ? profile.social.instagram
         : '';
 
-      // Set component fields state
+      // set component fields state
       this.setState({
         handle: profile.handle,
         company: profile.company,
@@ -174,7 +174,7 @@ class EditProfile extends Component {
       );
     }
 
-    // Select options for status
+    // select options for status
     const options = [
       { label: '* Select Professional Status', value: 0 },
       { label: 'Developer', value: 'Developer' },

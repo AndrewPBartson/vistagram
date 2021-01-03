@@ -75,7 +75,6 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* <div className="collapse navbar-collapse" id="mobile-nav">*/}
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">

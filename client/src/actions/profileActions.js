@@ -9,7 +9,7 @@ import {
   SET_CURRENT_USER
 } from './types';
 
-// Get current profile
+// get current profile
 export const getCurrentProfile = () => dispatch => {
   // set "Still Loading" spinner -
   dispatch(setProfileLoading());
@@ -30,7 +30,7 @@ export const getCurrentProfile = () => dispatch => {
     });
 };
 
-// Get profile by handle
+// get profile by handle
 export const getProfileByHandle = handle => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -49,7 +49,7 @@ export const getProfileByHandle = handle => dispatch => {
     );
 };
 
-// Create or edit profile
+// create or edit profile
 export const createProfile = (profileData, history) => dispatch => {
   axios
     .post('/api/profile', profileData)
@@ -62,7 +62,7 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
-// Add experience
+// add experience
 export const addExperience = (expData, history) => dispatch => {
   axios
     .post('/api/profile/experience', expData)
@@ -75,7 +75,7 @@ export const addExperience = (expData, history) => dispatch => {
     );
 };
 
-// Add education
+// add education
 export const addEducation = (eduData, history) => dispatch => {
   axios
     .post('/api/profile/education', eduData)
@@ -88,7 +88,7 @@ export const addEducation = (eduData, history) => dispatch => {
     );
 };
 
-// Delete Experience
+// delete Experience
 export const deleteExperience = id => dispatch => {
   axios
     .delete(`/api/profile/experience/${id}`)
@@ -106,7 +106,7 @@ export const deleteExperience = id => dispatch => {
     );
 };
 
-// Delete Education
+// delete Education
 export const deleteEducation = id => dispatch => {
   axios
     .delete(`/api/profile/education/${id}`)
@@ -124,7 +124,7 @@ export const deleteEducation = id => dispatch => {
     );
 };
 
-// Get all profiles
+// get all profiles
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -143,7 +143,7 @@ export const getProfiles = () => dispatch => {
     );
 };
 
-// Delete account & profile
+// delete account & profile
 export const deleteAccount = () => dispatch => {
   if (window.confirm('Are you sure? This can NOT be undone!')) {
     axios
@@ -163,14 +163,14 @@ export const deleteAccount = () => dispatch => {
   }
 };
 
-// Profile loading
+// profile loading
 export const setProfileLoading = () => {
   return {
     type: PROFILE_LOADING
   };
 };
 
-// Clear profile
+// clear profile
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE

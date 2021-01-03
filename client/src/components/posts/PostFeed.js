@@ -4,8 +4,6 @@ import PostItem from './PostItem';
 import isEmpty from '../../validation/is-empty';
 
 class PostFeed extends Component {
-  componentDidMount() {
-  }
 
   render() {
     const { posts } = this.props;

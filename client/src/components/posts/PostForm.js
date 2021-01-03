@@ -36,7 +36,6 @@ class PostForm extends Component {
 
     this.props.addPost(newPost);
     this.setState({ text: '' });
-    //this.setState({ image: '' }); 
   }
 
   onChange = (e) => {
@@ -46,7 +45,6 @@ class PostForm extends Component {
     if (e.target.name === 'image') {
       this.setState({ [e.target.name]: e.target.files[0] });
     };
-    //this.setState({ "image": e.target.files[0] });
   }
 
   render() {

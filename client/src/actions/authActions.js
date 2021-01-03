@@ -6,19 +6,9 @@ import setAuthToken from '../utils/setAuthToken';
 export const registerUser = (userData, history) => dispatch => {
   axios
     .post('/api/users/register', userData)
-    // Example of saving data to store (commented out) in
-    // which auth data makes complete trip - 
-    // event, action, reducer, store and back to 
-    // mapStateToProps.
-
-    // .then(res => dispatch({
-    //   type: SET_USER,
-    //   payload: res.data
-    // }))
-
-    // However user data should only
-    // be saved for logged in user. So for better
-    // performance, redirect user to login component -
+    // user data is only saved to store when user 
+    // successfully logs in. After user successfully
+    // registers, redirect user to login component -
 
     .then(res => history.push('/login'))
     .catch(err =>
@@ -34,7 +24,7 @@ export const loginUser = userData => dispatch => {
     .post('/api/users/login', userData)
     .then(res => {
       const { token } = res.data;
-      // save the token to localStorage
+      // save token to localStorage
       localStorage.setItem('jwtToken', token)
       // add token to auth header for all requests
       setAuthToken(token);
@@ -59,7 +49,7 @@ export const logoutUser = () => dispatch => {
   localStorage.removeItem('jwtToken');
   // remove token from axios header
   setAuthToken(false);
-  // reset user in redux store
+  // remove user from store
   dispatch({
     type: SET_USER,
     payload: {}

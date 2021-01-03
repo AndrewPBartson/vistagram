@@ -18,7 +18,7 @@ const initialState = {
 // action.type and action.payload. 
 // switch is used to match action.type with
 // some logic that is applied to the store. 
-// It has a default action to rewrite the current state.
+// it has default action to rewrite current state.
 
 export default function (state = initialState, action) {
 

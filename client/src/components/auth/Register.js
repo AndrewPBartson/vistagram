@@ -7,7 +7,6 @@ import { registerUser } from '../../actions/authActions';
 class Register extends Component {
   constructor() {
     super();
-    // Local state
     this.state = {
       name: '',
       email: '',
@@ -34,7 +33,6 @@ class Register extends Component {
     this.props.registerUser(newUser, this.props.history);
   }
 
-  // example of conditional in lifecycle method
   // save state to props
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -135,15 +133,14 @@ class Register extends Component {
     )
   }
 }
-// Checks for dependencies before loading component
+// Check for dependencies before loading component
 Register.propTypes = {
   // dependency - registerUser() in authAction.js
   registerUser: PropTypes.func.isRequired,
-  // errors maybe is not crucial?
   errors: PropTypes.object.isRequired
 }
 
-// mapStateToProps doesn't give chance to run conditional logic
+// mapStateToProps doesn't allow conditional logic
 // based on data. Use lifecycle method for that.
 const mapStateToProps = state => ({
   // inserts state.errors into props.errors
