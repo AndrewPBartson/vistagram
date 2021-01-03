@@ -34,7 +34,7 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-let testMsg = process.env.NODE_ENV;
+let testMsg = process.env;
 
 app.get(
   '/',
