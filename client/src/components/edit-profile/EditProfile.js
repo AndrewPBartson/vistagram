@@ -20,7 +20,6 @@ class EditProfile extends Component {
       location: '',
       status: '',
       skills: '',
-      githubusername: '',
       bio: '',
       twitter: '',
       facebook: '',
@@ -34,9 +33,9 @@ class EditProfile extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.getCurrentProfile();
-  }
+  // componentDidMount() {
+  //   this.props.getCurrentProfile();
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -51,9 +50,6 @@ class EditProfile extends Component {
       profile.company = !isEmpty(profile.company) ? profile.company : '';
       profile.website = !isEmpty(profile.website) ? profile.website : '';
       profile.location = !isEmpty(profile.location) ? profile.location : '';
-      profile.githubusername = !isEmpty(profile.githubusername)
-        ? profile.githubusername
-        : '';
       profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
       profile.social = !isEmpty(profile.social) ? profile.social : {};
       profile.twitter = !isEmpty(profile.social.twitter)
@@ -80,7 +76,6 @@ class EditProfile extends Component {
         location: profile.location,
         status: profile.status,
         skills: profile.skills,
-        githubusername: profile.githubusername,
         bio: profile.bio,
         twitter: profile.twitter,
         facebook: profile.facebook,
@@ -102,7 +97,6 @@ class EditProfile extends Component {
       location: this.state.location,
       status: this.state.status,
       skills: this.state.skills,
-      githubusername: this.state.githubusername,
       bio: this.state.bio,
       twitter: this.state.twitter,
       facebook: this.state.facebook,
@@ -190,11 +184,8 @@ class EditProfile extends Component {
     return (
       <div className="create-profile">
         <div className="container">
-          {/* <div className="row">
+          <div className="row">
             <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
-                Go Back
-              </Link>
               <h1 className="display-4 text-center cursive headline">Edit Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
@@ -248,14 +239,6 @@ class EditProfile extends Component {
                   info="Please use comma separated values (eg.
                     HTML,CSS,JavaScript,PHP"
                 />
-                <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
-                />
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
@@ -264,7 +247,6 @@ class EditProfile extends Component {
                   error={errors.bio}
                   info="Tell us a little about yourself"
                 />
-
                 <div className="mb-3">
                   <button
                     type="button"
@@ -282,12 +264,12 @@ class EditProfile extends Component {
                 {socialInputs}
                 <input
                   type="submit"
-                  value="Submit"
+                  value="Save Changes"
                   className="btn btn-info btn-block mt-4"
                 />
               </form>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     );

@@ -22,21 +22,20 @@ class Dashboard extends Component {
 
     let dashboardContent;
 
-    if (profile === null || loading) {
+    if (profile === null || profile === undefined || loading) {
       dashboardContent = <Spinner />;
     } else {
       // if current user has profile -
       if (profile && !profile.noprofile) {
         dashboardContent = (
           <div>
-            <p className="lead text-muted">
+            <p className="h5 text-muted">
               Hello <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
-            <p className="lead text-muted">
-              Here's your Profile. Please update as needed.
+            <p className="lead">
+              This is your Profile. Please update as needed.
             </p>
-            <p>Add "Edit Profile" component here</p>
-            {/* <EditProfile /> */}
+            <EditProfile />
             <div style={{ marginBottom: '60px' }} />
             <button
               onClick={this.onDeleteClick.bind(this)}
@@ -51,7 +50,10 @@ class Dashboard extends Component {
         // current user has no profile -
         dashboardContent = (
           <div>
-            <h3 className="lead text-muted">Welcome {user.name}! Tell us about yourself!</h3>
+            <p className="h5 text-muted">Welcome <span className="text-primary">{user.name}</span></p>
+            <p className="lead">
+              Tell us about yourself !
+            </p>
             <CreateProfile />
           </div>
 

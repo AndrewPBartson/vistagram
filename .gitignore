@@ -9,7 +9,7 @@ package-lock.json
 
 /staging
 
-# production
+# heruko needs to create /build
 /build
 
 .DS_Store

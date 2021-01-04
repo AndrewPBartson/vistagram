@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
@@ -49,6 +50,77 @@ class PostForm extends Component {
 
   render() {
     const { errors } = this.state;
+    const { isAuthenticated } = this.props.auth;
+
+    const lightForm = (
+      <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div className="card-body">
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <label htmlFor="image">Select a photo to upload:</label>
+              <input
+                style={{ border: "none" }}
+                type="file"
+                className={classnames("mb-2 form-control form-control-lg", {
+                  'is-invalid': errors.image
+                })}
+                id="image"
+                name="image"
+                icon="fa fa-picture-o fa-2x"
+                onChange={this.onChange}
+                accept="image/jpg, image/png"
+              />
+              {errors.image && (
+                <div className="invalid-feedback">
+                  {errors.image}
+                </div>
+              )}
+
+              <textarea
+                className={classnames("form-control form-control-lg", {
+                  'is-invalid': errors.text
+                })}
+                placeholder="Describe this Being... (max 255 letters)"
+                name="text"
+                value={this.state.text}
+
+                onChange={this.onChange}
+              />
+              {errors.text && (
+                <div className="invalid-feedback">
+                  {errors.text}
+                </div>
+              )}
+            </div>
+            <button type="submit" className="btn btn-dark">
+              Add Post
+              </button>
+          </form>
+
+        </div>
+      </div>
+    )
+
+    const loginRegisterLinks = (
+      <div id="collapseOne" className="collapse dark-overlay-only text-light" aria-labelledby="headingOne" data-parent="#accordion">
+        <div className="bg-img-only">
+          <div className="card-body">
+            <div className="col-md-12 text-center">
+              <h1 className="mb-4 cursive headline">
+                Vista-gram
+            </h1>
+              <p style={{
+                fontSize: "1.25rem",
+                fontWeight: "400"
+              }}>You must login to add a Being of Light</p>
+              <hr />
+              <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
+              <Link to="/login" className="btn btn-lg btn-light">Login</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
 
     return (
       <div className="post-form mb-3">
@@ -73,51 +145,10 @@ class PostForm extends Component {
                 Click to Add a Being
               </button>
             </div>
-            <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-              <div className="card-body">
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="image">Select a photo to upload:</label>
-                    <input
-                      style={{ border: "none" }}
-                      type="file"
-                      className={classnames("mb-2 form-control form-control-lg", {
-                        'is-invalid': errors.image
-                      })}
-                      id="image"
-                      name="image"
-                      icon="fa fa-picture-o fa-2x"
-                      onChange={this.onChange}
-                      accept="image/jpg, image/png"
-                    />
-                    {errors.image && (
-                      <div className="invalid-feedback">
-                        {errors.image}
-                      </div>
-                    )}
 
-                    <textarea
-                      className={classnames("form-control form-control-lg", {
-                        'is-invalid': errors.text
-                      })}
-                      placeholder="Describe this Being"
-                      name="text"
-                      value={this.state.text}
+            {isAuthenticated ? lightForm : loginRegisterLinks}
 
-                      onChange={this.onChange}
-                    />
-                    {errors.text && (
-                      <div className="invalid-feedback">
-                        {errors.text}
-                      </div>
-                    )}
-                  </div>
-                  <button type="submit" className="btn btn-dark">
-                    Submit
-              </button>
-                </form>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

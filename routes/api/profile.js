@@ -45,14 +45,14 @@ router.get("/all", (req, res) => {
       }
       res.json(profiles);
     })
-    .catch((err) => res.status(404).json(err));
+    .catch((err) => res.status(404).json({ profile: "Reality corrupted. Reboot?" }));
 });
 
 // @route   GET api/profile/handle/:handle
 // @desc    Get profile by handle
 // @access  Public
 
-// example [baseUrl]/api/profile/handle/shakyjake
+// example [baseUrl]/api/profile/handle/shaky"jake
 // not api/profile/handle/?handle=shakyjake
 router.get("/handle/:handle", (req, res) => {
   const errors = {};

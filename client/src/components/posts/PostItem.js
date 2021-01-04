@@ -98,9 +98,15 @@ class PostItem extends Component {
                     </button>
                   </div>
                   <div className="btn-group">
-                    <Link to={`/post/${post._id}`} className="btn btn-sm btn-outline-secondary mr-2 ml-1">
-                      Comments
-                  </Link>
+                    <Link
+                      to={`/post/${post._id}`}
+                      style={{
+                        maxHeight: "31px",
+                        marginTop: "auto",
+                        marginBottom: "auto"
+                      }}
+                      className="btn btn-sm btn-outline-secondary mr-2 ml-1"
+                    >Comments</Link>
                   </div>
                   <div className="btn-group">
                     {post.user === auth.user.id ? (

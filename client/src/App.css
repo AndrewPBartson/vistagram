@@ -13,6 +13,14 @@ img {
 .landing-inner {
   padding-top: 80px;
 }
+.bg-img-only {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.dark-overlay-only {
+  background: url("./img/pure_spirit.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
