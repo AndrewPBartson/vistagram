@@ -17,7 +17,7 @@ class Navbar extends Component {
         <li className="nav-item">
           <Link className="nav-link" to="/profiles">
             Contributors
-            </Link>
+          </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/register">
@@ -79,7 +79,7 @@ class Navbar extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/feed">Beings of Light
-            </Link>
+                </Link>
               </li>
             </ul>
 

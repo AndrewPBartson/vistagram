@@ -2,14 +2,17 @@
 package-lock.json
 /client/node_modules
 /client/package-lock.json
+unotes_meta.json
+/.unotes
 
 /client/.eslintcache
 
 /config/keys_dev.js
 
-/staging
-
 # heruko needs to create /build
 /build
+
+/staging
+/uploads
 
 .DS_Store

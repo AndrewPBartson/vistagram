@@ -40,8 +40,7 @@ router.post('/register', (req, res) => {
           password: req.body.password,
           avatar
         })
-        // tells bcrypt to generate a salt and
-        // run ten rounds before stopping
+        // generate a salt and run 10 cycles
         bcrypt.genSalt(10, (err, salt) => {
           // when salt comes back, give password + salt to hash()
           bcrypt.hash(req.body.password, salt, (err, hash) => {
