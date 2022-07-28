@@ -1,18 +1,16 @@
 /node_modules
-package-lock.json
 /client/node_modules
-/client/package-lock.json
-unotes_meta.json
-/.unotes
 
 /client/.eslintcache
 
 /config/keys_dev.js
 
-# heruko needs to create /build
+# folder where heruko creates build
 /build
 
 /staging
 /uploads
 
 .DS_Store
+
+/.vscode

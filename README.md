@@ -1,19 +1,42 @@
-# Vista-gram
+![](/screenshots/banner.jpg)
 
-## Status of Project
+## VistaGram - Social media app 
+- Primary competitor of Instagram
+- Visit live site on Heroku -
+  - [Visit welcome page](https://nameless-basin-33885.herokuapp.com)
+  - [Visit main feed - Posts](https://nameless-basin-33885.herokuapp.com/feed)
+- [Show me the code - GitHub](https://github.com/andrewpbartson/vistagram)
 
-January 3, 2021
+### MERN Stack
+- React
+- Redux
+- NodeJS
+- Express server
+- Mongo database
 
-URL - https://nameless-basin-33885.herokuapp.com
+### Actions available to Users
+- Browse posts
+- Register, login, and logout
+- Add and delete posts
+- Add and delete comments
+- Add and delete likes
+- Add and delete your profile
+- Browse profiles of other users
 
-Git repo - https://github.com/cloudobserver/vistagram
+### Special features
+- Photos are uploaded to Mongo using Multer
+- Authentication uses JWT, JavaScript Web Tokens
+---
 
-* Server and APIs working
-* Photos can be uploaded to Mongo
-* UI is mostly working but there are bugs.
+#### Main feed - Posts
+![Main feed - Post](/screenshots/beings_of_light.jpg)
 
-## Improvement Wish List
+#### Welcome page
+![Welcome page](/screenshots/welcome.jpg)
 
-* Store images as files, not in DB
-* Implement EditProfile and EditPost functionality
-* Edit MongoDB whitelist to include specific IP address for Heroku server
+![Login](/screenshots/login.jpg)
+
+#### View profiles
+![View profiles](/screenshots/contributors.jpg)
+
+---
